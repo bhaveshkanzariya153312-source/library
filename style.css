@@ -1,0 +1,797 @@
+/* =========================================================
+   MY LIBRARY - PROFESSIONAL UI
+   Bootstrap 5 + Custom CSS
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap');
+
+:root {
+    --primary: #234e70;
+    --primary-dark: #173a56;
+    --primary-light: #eaf2f8;
+    --secondary: #d4a373;
+    --secondary-light: #f7eadb;
+    --dark: #172b3a;
+    --text: #465661;
+    --muted: #7b8a94;
+    --bg: #f4f7f9;
+    --white: #ffffff;
+    --border: #e2e8ed;
+    --success: #2e8b68;
+    --danger: #c94c4c;
+    --warning: #d89b32;
+    --shadow: 0 8px 25px rgba(23, 43, 58, 0.08);
+    --shadow-hover: 0 14px 35px rgba(23, 43, 58, 0.14);
+    --radius: 14px;
+}
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: "Inter", Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+a {
+    text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: var(--dark);
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 28px;
+    margin-bottom: 25px;
+}
+
+h4 {
+    font-size: 20px;
+}
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar {
+    background: var(--primary) !important;
+    min-height: 72px;
+    box-shadow: 0 4px 18px rgba(23, 43, 58, 0.12);
+}
+
+.navbar-brand {
+    color: #fff !important;
+    font-size: 21px;
+    font-weight: 800;
+    letter-spacing: .3px;
+}
+
+.navbar-brand span {
+    color: var(--secondary);
+}
+
+.navbar .btn {
+    border-radius: 8px;
+    font-weight: 600;
+    transition: all .25s ease;
+}
+
+.navbar .btn-light {
+    color: var(--primary);
+}
+
+.navbar .btn:hover {
+    transform: translateY(-2px);
+}
+
+/* =========================================================
+   HOME / HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+    min-height: 430px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 20px;
+    overflow: hidden;
+    background:
+        linear-gradient(
+            135deg,
+            rgba(23, 58, 86, .96),
+            rgba(35, 78, 112, .91)
+        );
+}
+
+.hero::before {
+    content: "📚";
+    position: absolute;
+    right: 8%;
+    top: 45px;
+    font-size: 170px;
+    opacity: .08;
+    transform: rotate(-10deg);
+}
+
+.hero::after {
+    content: "";
+    position: absolute;
+    width: 280px;
+    height: 280px;
+    border: 1px solid rgba(255,255,255,.12);
+    border-radius: 50%;
+    left: -100px;
+    bottom: -130px;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    color: #fff;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(38px, 5vw, 62px);
+    font-weight: 700;
+    letter-spacing: .5px;
+    margin-bottom: 15px;
+}
+
+.hero p {
+    color: rgba(255,255,255,.82);
+    font-size: 18px;
+    margin-bottom: 28px;
+}
+
+.hero .btn {
+    padding: 12px 28px;
+    border-radius: 9px;
+    background: var(--secondary);
+    border-color: var(--secondary);
+    color: #fff;
+    font-weight: 700;
+    box-shadow: 0 7px 18px rgba(0,0,0,.15);
+    transition: all .25s ease;
+}
+
+.hero .btn:hover {
+    background: #bd8957;
+    border-color: #bd8957;
+    transform: translateY(-3px);
+}
+
+/* =========================================================
+   STAT CARDS
+   ========================================================= */
+
+.stat-card,
+.card {
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    background: var(--white);
+    box-shadow: var(--shadow);
+}
+
+.stat-card {
+    text-align: center;
+    overflow: hidden;
+    transition: all .25s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-hover);
+}
+
+.stat-card .card-body {
+    padding: 28px 20px;
+}
+
+.stat-card h5 {
+    color: var(--muted);
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: .7px;
+    margin-bottom: 10px;
+}
+
+.stat-card h2 {
+    color: var(--primary);
+    font-size: 34px;
+    margin: 0;
+}
+
+/* Dashboard cards */
+
+.dashboard-stat {
+    position: relative;
+    overflow: hidden;
+}
+
+.dashboard-stat::after {
+    content: "";
+    position: absolute;
+    width: 80px;
+    height: 80px;
+    right: -20px;
+    bottom: -25px;
+    border-radius: 50%;
+    background: var(--primary-light);
+}
+
+.dashboard-stat .stat-icon {
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--primary-light);
+    font-size: 21px;
+    margin-bottom: 15px;
+}
+
+/* =========================================================
+   SIDEBAR
+   ========================================================= */
+
+.sidebar {
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    padding: 24px 16px;
+    background:
+        linear-gradient(
+            180deg,
+            #173a56 0%,
+            #234e70 100%
+        );
+    color: #fff;
+    box-shadow: 5px 0 20px rgba(23, 43, 58, .12);
+    overflow-y: auto;
+}
+
+.sidebar-header {
+    padding: 6px 10px 25px;
+    border-bottom: 1px solid rgba(255,255,255,.12);
+    margin-bottom: 18px;
+}
+
+.sidebar-brand {
+    color: #fff;
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.sidebar-subtitle {
+    color: rgba(255,255,255,.55);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.sidebar-section {
+    color: rgba(255,255,255,.45);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 10px 12px 6px;
+}
+
+.sidebar a {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    color: rgba(255,255,255,.82);
+    text-decoration: none;
+    padding: 11px 13px;
+    border-radius: 9px;
+    margin: 4px 0;
+    font-weight: 500;
+    transition: all .22s ease;
+}
+
+.sidebar a:hover {
+    color: #fff;
+    background: rgba(255,255,255,.10);
+    transform: translateX(3px);
+}
+
+.sidebar a.active {
+    color: #fff;
+    background: rgba(212,163,115,.20);
+    box-shadow: inset 3px 0 0 var(--secondary);
+}
+
+.sidebar .logout {
+    margin-top: 20px;
+    color: #ffd5d5;
+}
+
+/* =========================================================
+   TOPBAR
+   ========================================================= */
+
+.topbar {
+    position: sticky;
+    z-index: 900;
+    top: 0;
+    margin-left: 250px;
+    min-height: 70px;
+    padding: 15px 35px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: rgba(255,255,255,.95);
+    border-bottom: 1px solid var(--border);
+    backdrop-filter: blur(10px);
+}
+
+.topbar-title {
+    font-weight: 700;
+    color: var(--dark);
+    font-size: 17px;
+}
+
+.topbar-subtitle {
+    color: var(--muted);
+    font-size: 12px;
+}
+
+/* =========================================================
+   CONTENT
+   ========================================================= */
+
+.content {
+    margin-left: 250px;
+    padding: 35px;
+    min-height: calc(100vh - 70px);
+}
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h2 {
+    margin-bottom: 5px;
+}
+
+.page-header p {
+    color: var(--muted);
+    margin: 0;
+}
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card {
+    overflow: hidden;
+}
+
+.card-header {
+    background: #fff;
+    border-bottom: 1px solid var(--border);
+    font-weight: 700;
+    color: var(--dark);
+}
+
+.card-body {
+    padding: 22px;
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+/* =========================================================
+   BUTTONS
+   ========================================================= */
+
+.btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 9px 16px;
+    transition: all .22s ease;
+}
+
+.btn-primary {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+.btn-primary:hover {
+    background: var(--primary-dark);
+    border-color: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(35,78,112,.20);
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    border-color: var(--secondary);
+}
+
+.btn-danger {
+    background: var(--danger);
+    border-color: var(--danger);
+}
+
+.btn-success {
+    background: var(--success);
+    border-color: var(--success);
+}
+
+/* =========================================================
+   FORMS
+   ========================================================= */
+
+.form-control,
+.form-select {
+    min-height: 44px;
+    border: 1px solid #d8e0e6;
+    border-radius: 8px;
+    color: var(--dark);
+    background: #fff;
+    transition: all .2s ease;
+}
+
+.form-control::placeholder {
+    color: #9aa6ae;
+}
+
+.form-control:focus,
+.form-select:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(35,78,112,.10);
+}
+
+.form-label,
+label {
+    color: var(--dark);
+    font-weight: 600;
+    margin-bottom: 7px;
+}
+
+/* =========================================================
+   TABLES
+   ========================================================= */
+
+.table {
+    margin-bottom: 0;
+    vertical-align: middle;
+}
+
+.table thead th {
+    background: #f1f5f8;
+    color: var(--dark);
+    border-bottom: 1px solid var(--border);
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .45px;
+    padding: 14px 12px;
+    white-space: nowrap;
+}
+
+.table tbody td {
+    padding: 13px 12px;
+    color: var(--text);
+    border-color: #edf0f2;
+}
+
+.table-hover tbody tr:hover {
+    background: #f8fafb;
+}
+
+.table-bordered {
+    border-color: var(--border);
+}
+
+.table-responsive {
+    border-radius: 9px;
+}
+
+/* =========================================================
+   BADGES
+   ========================================================= */
+
+.badge {
+    border-radius: 20px;
+    padding: 6px 10px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   ALERTS
+   ========================================================= */
+
+.alert {
+    border: 0;
+    border-radius: 10px;
+    padding: 13px 16px;
+}
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.login-bg {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    background:
+        linear-gradient(
+            135deg,
+            #edf3f7,
+            #dfeaf1
+        );
+    position: relative;
+}
+
+.login-bg::before {
+    content: "📚";
+    position: fixed;
+    left: 7%;
+    top: 10%;
+    font-size: 150px;
+    opacity: .04;
+}
+
+.login-bg::after {
+    content: "📖";
+    position: fixed;
+    right: 7%;
+    bottom: 8%;
+    font-size: 160px;
+    opacity: .04;
+}
+
+.login-card {
+    position: relative;
+    z-index: 2;
+    background: #fff;
+    width: 410px;
+    max-width: 100%;
+    padding: 38px;
+    border-radius: 18px;
+    border: 1px solid var(--border);
+    box-shadow: 0 18px 50px rgba(23,43,58,.13);
+}
+
+.login-logo {
+    width: 58px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    border-radius: 15px;
+    background: var(--primary-light);
+    font-size: 28px;
+}
+
+.login-card h3 {
+    color: var(--dark);
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 28px;
+}
+
+.login-card .form-control {
+    min-height: 48px;
+}
+
+.login-card .btn {
+    min-height: 47px;
+}
+
+.login-card .demo-text {
+    background: #f6f8fa;
+    padding: 9px 12px;
+    border-radius: 8px;
+}
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+.search-box {
+    position: relative;
+}
+
+.search-box input {
+    padding-left: 42px;
+}
+
+.search-box .search-icon {
+    position: absolute;
+    left: 15px;
+    top: 12px;
+    color: var(--muted);
+}
+
+/* =========================================================
+   WELCOME PANEL
+   ========================================================= */
+
+.welcome-panel {
+    background:
+        linear-gradient(
+            135deg,
+            #fff,
+            #f7fafc
+        );
+    border-left: 4px solid var(--secondary);
+}
+
+.welcome-panel h5 {
+    margin-bottom: 6px;
+}
+
+.welcome-panel p {
+    color: var(--muted);
+    margin-bottom: 0;
+}
+
+/* =========================================================
+   PROFILE
+   ========================================================= */
+
+.profile-card {
+    max-width: 650px;
+}
+
+.profile-avatar {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-light);
+    color: var(--primary);
+    border-radius: 50%;
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+footer {
+    text-align: center;
+    padding: 22px;
+    background: var(--dark);
+    color: rgba(255,255,255,.72);
+    font-size: 13px;
+}
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 991px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+        padding: 15px;
+    }
+
+    .sidebar-header {
+        padding-bottom: 15px;
+    }
+
+    .sidebar a {
+        display: inline-flex;
+        margin: 3px;
+    }
+
+    .sidebar-section {
+        display: none;
+    }
+
+    .topbar {
+        margin-left: 0;
+    }
+
+    .content {
+        margin-left: 0;
+        padding: 25px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .hero {
+        min-height: 380px;
+        padding: 65px 20px;
+    }
+
+    .hero h1 {
+        font-size: 40px;
+    }
+
+    .topbar {
+        min-height: 60px;
+        padding: 13px 20px;
+    }
+
+    .content {
+        padding: 22px 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    .login-card {
+        padding: 28px 22px;
+    }
+
+    .table {
+        min-width: 700px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .navbar {
+        min-height: auto;
+        padding: 12px;
+    }
+
+    .navbar .container {
+        gap: 10px;
+    }
+
+    .navbar .btn {
+        font-size: 11px;
+        padding: 7px 9px;
+    }
+
+    .hero h1 {
+        font-size: 34px;
+    }
+
+    .hero p {
+        font-size: 15px;
+    }
+
+    .sidebar a {
+        width: 100%;
+    }
+
+    .content {
+        padding: 18px 12px;
+    }
+}
